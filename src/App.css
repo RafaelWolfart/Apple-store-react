@@ -21,6 +21,12 @@
 .logo {
   display: flex;
   align-items: start;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+img {
+  object-fit: contain;
 }
 
 .cart-widget {

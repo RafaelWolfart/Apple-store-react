@@ -1,9 +1,11 @@
 export default function Logo() {
     return (
         <>
-            < div className="logo">
-                <img src="" alt="Logo" />
+        <button>
+            <div className="logo">
+                <img src="/apple-icon.svg" alt="Logo" />
             </div>
+        </button>
         </>
     )
 }
