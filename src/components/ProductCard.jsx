@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function ProductCard ({ product }) {
     return (
         <>
-            <article>
+            <article className="product-card">
                 <h3>
                     {product.title}
                 </h3>
