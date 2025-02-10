@@ -2,6 +2,7 @@ import {  useState, useEffect  } from 'react';
 import {  useParams  } from 'react-router-dom';
 import { getProduct } from '../../asyncMock';
 import ButtonComponent from './ButtonComponent';
+import ItemCount from './ItemCount';
 
 export default function ProductDetails() {
 
@@ -15,14 +16,13 @@ export default function ProductDetails() {
     return (
         <>
             <h1>Detalle de producto {id}</h1>
-            <p>ID: {product?.id}</p>
             <h3>Nombre: {product?.title}</h3>
             <img src="{product?.image}" alt={product?.title} />
             <p>Descripcion: {product?.description}</p>
             <p>Categoria: {product?.category}</p>
             <p>Precio: ${product?.price}</p>
-                <ButtonComponent text="Agregar al carrito"/>
-            
+            <ItemCount />
+            <ButtonComponent text="Agregar al carrito"/>
         </>
     );
 }

@@ -3,7 +3,7 @@ export default function Logo() {
         <>
         <button>
             <div className="logo">
-                <img src="/apple-icon.svg" alt="Logo" />
+                <img src="/public/img/apple-icon.svg" alt="Logo" />
             </div>
         </button>
         </>

@@ -5,7 +5,7 @@ const products = [
         price: 500,
         category: "iPhone",
         description: "Storage: 128, 256, 512",
-        image: "x",
+        image: "/public/img/IP13BLK1.svg",
     },
     {
         id: 2,
@@ -13,7 +13,7 @@ const products = [
         price: 600,
         category: "iPhone",
         description: "Storage: 128, 256, 512",
-        image: "x",
+        image: "/public/img/IP13BLK1.svg",
     },
     {
         id: 3,
@@ -21,7 +21,7 @@ const products = [
         price: 700,
         category: "iPhone",
         description: "Storage: 128, 256, 512",
-        image: "x",
+        image: "/public/img/iPhone-15-Pink.svg",
     },
     {
         id: 4,

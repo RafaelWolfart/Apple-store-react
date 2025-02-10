@@ -40,3 +40,12 @@ img {
   margin: 20px;
   border-radius: 10px;
 }
+
+.item-count {
+  margin: 15px;
+}
+
+.img-iph {
+  width: 200px;
+  height: 200px;
+}
