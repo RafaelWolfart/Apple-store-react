@@ -1,6 +1,6 @@
 import {  useState, useEffect  } from 'react';
 import {  useParams  } from 'react-router-dom';
-import { getProduct } from '../../asyncMock';
+import { getProducts } from '../firebase/firebase';
 import ButtonComponent from './ButtonComponent';
 import ItemCount from './ItemCount';
 
@@ -10,7 +10,7 @@ export default function ProductDetails() {
     const [product, setProduct] = useState(null);
 
     useEffect(() => {
-        setProduct(getProduct(id));
+        setProduct(getProducts(id));
     }, [id]);
 
     return (

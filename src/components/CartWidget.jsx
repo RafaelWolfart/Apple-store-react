@@ -1,13 +1,23 @@
-export default function CartWidget(){
-    return(
+
+import { useContext } from 'react'
+import { CartContext } from '../context/CartContext'
+
+
+const CartWidget = () => {
+    const context = useContext(CartContext);
+
+    const cart = context
+    return (
         <>
             <div>
                 <button>
                     <div className="cart-widget">
-                        <span role="img" aria-label="carrito">🛒</span>
+                        🛒{cart.length}
                     </div>
                 </button>
             </div>
         </>
     )
 }
+
+export default CartWidget;

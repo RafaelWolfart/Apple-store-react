@@ -1,16 +1,18 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ItemListContainer from './components/ItemListContainer'
-import Nav from './components/Nav'
+import NavBar from './components/NavBar'
 import CartWidget from './components/CartWidget'
 import './App.css'
 import ProductDetails from './components/ProductDetails'
 import NotFound from './components/NotFound404'
+import  CartProvider  from './context/CartProvider'
 
 function App() {
   return (
     <>
       <BrowserRouter>
-      <Nav/>
+      <NavBar/>
+      <CartProvider>
       <Routes>
         <Route exact path="/" element={<ItemListContainer/>} />
         <Route exact path='*' element={<NotFound/>}/>
@@ -18,6 +20,7 @@ function App() {
         <Route exact path="/cartWidget" element={<CartWidget/>} />
         <Route exact path="/product/:id" element={<ProductDetails/>} />
       </Routes>
+      </CartProvider>
       </BrowserRouter>
     </>
   )

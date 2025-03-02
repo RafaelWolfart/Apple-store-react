@@ -3,7 +3,7 @@ import Logo from "./Logo"
 import CartWidget from "./CartWidget"
 import { Link } from "react-router-dom"
 
-export default function Nav () {
+export default function NavBar () {
     return (
         <>
             <nav className="navbar">
@@ -15,12 +15,6 @@ export default function Nav () {
                 </Link>
                 <Link to="/category/iPad">
                     <ButtonComponent text="iPad"/>
-                </Link>
-                <Link to="/category/Mac">
-                    <ButtonComponent text="Mac"/>
-                </Link>
-                <Link to="/category/Watch">
-                    <ButtonComponent text="Watch"/>
                 </Link>
                 <Link to="/category/Accessories">
                     <ButtonComponent text="Accessories"/>
