@@ -11,8 +11,8 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <NavBar/>
       <CartProvider>
+      <NavBar/>
       <Routes>
         <Route exact path="/" element={<ItemListContainer/>} />
         <Route exact path='*' element={<NotFound/>}/>

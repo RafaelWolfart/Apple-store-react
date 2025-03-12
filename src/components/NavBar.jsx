@@ -19,9 +19,9 @@ export default function NavBar () {
                 <Link to="/category/Accessories">
                     <ButtonComponent text="Accessories"/>
                 </Link>
-                <Link to="/cartWidget">
+                {/* <Link to="/CartWidget"> */}
                     <CartWidget/>
-                </Link>
+                {/* </Link> */}
             </nav>
         </>
     )
