@@ -25,13 +25,25 @@
   max-height: 100px;
 }
 
+.img-logo {
+  width: 80px;
+}
+
+.cart-img {
+  width: 40px;
+  padding: 5px;
+}
+
 img {
   object-fit: contain;
+  width: 200px;
 }
 
 .cart-widget {
   display: flex;
   justify-content: end;
+  width: 85px;
+  margin-left: 10px;
 }
 
 .product-card {

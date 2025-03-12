@@ -19,23 +19,7 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
-export async function getProducts() {
-    try {
-        const querySnapshot = await getDocs(collection(db, 'products'));
-        if (querySnapshot.size !== 0) {
-            const prodList = querySnapshot.docs.map((doc) => {
-                return { id: doc.id, ...doc.data() };
-            });
-            return prodList;
-        } else {
-            console.log('No hay productos en la base de datos');
-        }
-    } catch (err) {
-        console.error('No se pudo obtener la colección', err);
-    }
-}
-
-export async function getSingleProduct(id) {
+export async function getProduct(id) {
     const docRef = doc(db, 'products', id);
 
     try {
@@ -48,6 +32,16 @@ export async function getSingleProduct(id) {
     } catch (err) {
         console.error('No se pudo obtener el documento', err);
     }
+}
+
+
+export async function getProducts(){
+    const querySnapshot = await getDocs(collection(db, "products"));
+    const products = [];
+    querySnapshot.forEach(doc => {
+        products.push({ id: doc.id, ...doc.data() });
+    });
+    return products;
 }
 
 export async function addNewOrder(order) {

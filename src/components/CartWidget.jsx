@@ -1,23 +1,22 @@
-
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
+import { Link } from 'react-router-dom'
 
 
-const CartWidget = () => {
-    const context = useContext(CartContext);
+export default function CartWidget() {
+    const { cart } = useContext(CartContext);
 
-    const cart = context
+
     return (
         <>
-            <div>
-                <button>
-                    <div className="cart-widget">
-                        🛒{cart.length}
-                    </div>
-                </button>
-            </div>
-        </>
-    )
-}
 
-export default CartWidget;
+        {cart?.length > 0 ? <Link to="/cartWidget">
+        <button className="cartWidget"> 
+            <div>{cart.length}</div>
+            <img className='cart-img' src="/public/img/carrito-de-compras.png" alt="Cart" />
+        </button>
+        </Link> : null}
+
+        </>
+    );
+}

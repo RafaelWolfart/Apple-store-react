@@ -5,7 +5,7 @@ import CartWidget from './components/CartWidget'
 import './App.css'
 import ProductDetails from './components/ProductDetails'
 import NotFound from './components/NotFound404'
-import  CartProvider  from './context/CartProvider'
+import  CartProvider  from './context/CartContext'
 
 function App() {
   return (
