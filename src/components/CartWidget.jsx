@@ -10,7 +10,7 @@ export default function CartWidget() {
     return (
         <>
 
-        {cart?.length > 0 && <Link to="/CartComponent">
+        {cart?.length > 0 && <Link to="/Cart">
         <button className="cartWidget"> 
             <div>{cart.length}</div>
             <img className='cart-img' src="/img/carrito-de-compras.png" alt="Cart" />
@@ -20,3 +20,4 @@ export default function CartWidget() {
         </>
     );
 }
+
