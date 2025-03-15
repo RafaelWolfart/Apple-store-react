@@ -9,9 +9,7 @@ export default function CartProvider({children}) {
 
     const addToCart = (product) => {
             setCart([...cart, product])
-            console.log(cart)
     }
-
 
 
     useEffect(() => {

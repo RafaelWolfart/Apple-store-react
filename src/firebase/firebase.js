@@ -25,7 +25,7 @@ export async function getProduct(id) {
     try {
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-            return docSnap.data()
+            return { id: docSnap.id, ...docSnap.data()}
         } else {
             console.log('No se encontró el producto');
         }
