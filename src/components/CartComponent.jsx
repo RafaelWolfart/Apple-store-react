@@ -5,8 +5,15 @@ import { CartContext } from "../context/CartContext";
 // import ButtonComponent from "./ButtonComponent";
 
 export default function CartComponent() {
-  const { cart } = useContext(CartContext);
+  const { cart, setCart } = useContext(CartContext);
 
+  const handleEmptyCart = () => {
+    setCart([]);
+  };
+
+  const calculateTotal = () => {
+    return cart.reduce((total, product) => total + product.price * product.cantidad, 0);
+  };
 
   return (
       <div>
@@ -17,12 +24,23 @@ export default function CartComponent() {
                       <p>{product.title}</p>
                       <img src={product.image} alt={product?.title} />
                       <p>Cantidad: {product.cantidad}</p>
-                      <p>Precio: ${product.price}</p>
+                      <p>Precio: ${product.price * product.cantidad}</p>
                   </div>
               ))
           ) : (
               <p>El carrito está vacío</p>
           )}
+
+            <div className="TotalContainer">
+              <h3 >Total:</h3>
+            <p className="PTotal"> ${calculateTotal()}</p>
+
+
+            <button className="CartButton" onClick={handleEmptyCart}>
+              Empty Cart
+            </button>
+
+            </div>
       </div>
   );
 }

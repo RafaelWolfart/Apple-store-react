@@ -7,9 +7,18 @@ export const CartContext = createContext(null);
 export default function CartProvider({children}) {
     const [cart, setCart] = useState([]);
 
-    const addToCart = (product) => {
-            setCart([...cart, product])
-    }
+    const addToCart = (product, cantidad) => {
+        const existingProduct = cart.find((p) => p.id === product.id);
+    
+        if (existingProduct) {
+            const updatedCart = cart.map((p) =>
+                p.id === product.id ? { ...p, cantidad: p.cantidad + cantidad } : p
+            );
+            setCart(updatedCart);
+        } else {
+            setCart([...cart, { ...product, cantidad }]);
+        }
+    };
 
 
     useEffect(() => {

@@ -22,9 +22,9 @@ export default function ProductDetails() {
         prodList();
     }, [id]);
 
-    const handleAddToCart = () => {
+    const handleAddToCart = (cantidad) => {
         if (product) {
-            addToCart(product);
+            addToCart(product, cantidad);
         }
     }
 
@@ -38,8 +38,7 @@ export default function ProductDetails() {
             <p>Descripcion: {product?.description}</p>
             <p>Categoria: {product?.category}</p>
             <p>Precio: ${product?.price}</p>
-            <ItemCount />
-            <button onClick={handleAddToCart}>Agregar al carrito</button>
+            <ItemCount stock={10} initial={1} onAdd={handleAddToCart}/>
         </>
             ) : (
                 loading && <p>Cargando...</p>
