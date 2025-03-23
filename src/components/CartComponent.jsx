@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 // import NavBar from "./NavBar";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import ButtonComponent from "./ButtonComponent";
 
 export default function CartComponent() {
@@ -10,6 +10,7 @@ export default function CartComponent() {
   const handleEmptyCart = () => {
     setCart([]);
   };
+
 
   const calculateTotal = () => {
     return cart.reduce((total, product) => total + product.price * product.cantidad, 0);
@@ -39,6 +40,14 @@ export default function CartComponent() {
             <button className="CartButton" onClick={handleEmptyCart}>
               Empty Cart
             </button>
+
+            {cart.length > 0 ? (
+          <Link to="/checkout">
+            <button className="buy-button">Comprar</button>
+          </Link>
+        ) : (
+          <button className="buy-button" disabled>Comprar</button>
+        )}
 
             </div>
       </div>
